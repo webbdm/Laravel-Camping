@@ -1,11 +1,7 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <title>Laravel</title>
-    </head>
+@extends('layout')
 
-    <body>
+
+@section ('content')
         <h1>{{ $campsite-> name }}</h1>
         <p>{{ $campsite-> description }}</p>
-    </body>
-</html>
+@endsection

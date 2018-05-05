@@ -16,7 +16,7 @@ class CampsitesController extends Controller
 
     public function show(Campsite $campsite){
 
-        return $campsite;
+        //return $campsite;
 
         return view('campsites.show', compact('campsite'));
 
