@@ -13,7 +13,10 @@
 
     <body>
         <div class="title m-b-md">
-            <h1>Welcome to <?= $name; ?></h1>
-        </div>
+            <ul>
+                @foreach ($campsites as $campsite)
+                    <li>{{ $campsite-> name }}</li>
+                @endforeach
+             </ul>
     </body>
 </html>
