@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCampsitesTable extends Migration
+class CreateParksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateCampsitesTable extends Migration
      */
     public function up()
     {
-        Schema::create('campsites', function (Blueprint $table) {
+        Schema::create('parks', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
-            $table->string('park_id');
             $table->string('description');
             $table->string('latitude');
             $table->string('longitude');
@@ -33,6 +32,6 @@ class CreateCampsitesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('campsites');
+        Schema::dropIfExists('parks');
     }
 }
