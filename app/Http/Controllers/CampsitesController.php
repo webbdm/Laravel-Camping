@@ -11,14 +11,14 @@ class CampsitesController extends Controller
 
         $campsites = Campsite::all();
 
-        return view('campsites.index', compact('campsites'));
+        return $campsites; //view('campsites.index', compact('campsites'));
     }
 
     public function show(Campsite $campsite){
 
-        //return $campsite;
+        return $campsite;
 
-        return view('campsites.show', compact('campsite'));
+        //return view('campsites.show', compact('campsite'));
 
     }
 }
