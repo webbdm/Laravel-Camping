@@ -37,7 +37,10 @@ class ParkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Park::create([
+            'name'=> request('name'),
+            'description'=> request('description')
+        ]);
     }
 
     /**
