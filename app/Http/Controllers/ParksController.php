@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Park;
 use Illuminate\Http\Request;
+use App\Park;
 
-class ParkController extends Controller
+class ParksController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -51,7 +51,7 @@ class ParkController extends Controller
      */
     public function show(Park $park)
     {
-        //
+        return $park;
     }
 
     /**
