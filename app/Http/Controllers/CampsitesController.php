@@ -63,6 +63,9 @@ class CampsitesController extends Controller
      */
     public function edit($id)
     {
+        // Campsite::where('id', $id)->(update[
+
+        // ]);
         //
     }
 
@@ -75,7 +78,11 @@ class CampsitesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $campsite = Campsite::findOrFail($id);
+        $campsite->update($request->all());
+
+        return response()->json($campsite, 200);
     }
 
     /**

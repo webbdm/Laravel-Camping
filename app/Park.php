@@ -9,4 +9,5 @@ class Park extends Model
     {
         return $this->hasMany(Campsite::class);
     }
+
 }

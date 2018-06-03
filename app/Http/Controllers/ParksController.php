@@ -72,9 +72,12 @@ class ParksController extends Controller
      * @param  \App\Park  $park
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Park $park)
+    public function update(Request $request, $id)
     {
-        //
+        $park = Park::findOrFail($id);
+        $park->update($request->all());
+
+        return response()->json($park, 200);
     }
 
     /**
