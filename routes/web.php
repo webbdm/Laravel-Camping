@@ -13,4 +13,7 @@ Route::post('/parks', 'ParksController@store');
 Route::get('/parks/{park}', 'ParksController@show');
 Route::put('/parks/{park}', 'ParksController@update');
 
-
+Route::get('/posts', 'PostsController@index');
+Route::post('/posts', 'PostsController@store');
+Route::get('/posts/{post}', 'PostsController@show');
+Route::put('/posts/{post}', 'PostsController@update');
