@@ -54,7 +54,8 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        return $post;
+        
+        return [$post];
     }
 
     /**
@@ -89,8 +90,9 @@ class PostsController extends Controller
      * @param  \App\post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(post $post)
+    public function destroy(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->delete();
     }
 }

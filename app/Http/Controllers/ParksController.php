@@ -50,7 +50,7 @@ class ParksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Park $park)
-    {
+    { 
         return $park;
     }
 
