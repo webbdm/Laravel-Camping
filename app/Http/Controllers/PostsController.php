@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Park;
 use Illuminate\Http\Request;
+use App\Post;
 
-class ParkController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class ParkController extends Controller
      */
     public function index()
     {
-        $parks = Park::all();
+        $posts = Post::all(); 
 
-        return $parks;
+        return $posts;
     }
 
     /**
@@ -37,27 +37,34 @@ class ParkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Post::create([
+            'title'=> request('title'),
+            'description'=> request('description'),
+            'park_id'=> request('park_id'),
+            'trip_date'=> '2014-08-18',
+            'campsite_id'=> request('campsite_id')
+        ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Park  $park
+     * @param  \App\post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Park $park)
+    public function show(Post $post)
     {
-        //
+        
+        return $post;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Park  $park
+     * @param  \App\post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Park $park)
+    public function edit(post $post)
     {
         //
     }
@@ -66,22 +73,26 @@ class ParkController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Park  $park
+     * @param  \App\post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Park $park)
+    public function update(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->update($request->all());
+
+        return response()->json($post, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Park  $park
+     * @param  \App\post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Park $park)
+    public function destroy(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->delete();
     }
 }

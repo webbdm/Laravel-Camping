@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Campsite;
+use App\Park;
 
-class CampsitesController extends Controller
+class ParksController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class CampsitesController extends Controller
      */
     public function index()
     {
-        $campsites = Campsite::all();
+        $parks = Park::all();
 
-        return $campsites; 
+        return $parks;
     }
 
     /**
@@ -37,35 +37,31 @@ class CampsitesController extends Controller
      */
     public function store(Request $request)
     {
-        Campsite::create([
-            'name' => request('name'),
-            'description' => request('description'),
-            'park_id' => request('park_id')
+        Park::create([
+            'name'=> request('name'),
+            'description'=> request('description')
         ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Park  $park
      * @return \Illuminate\Http\Response
      */
-    public function show(Campsite $campsite)
-    {
-        return $campsite;
+    public function show(Park $park)
+    { 
+        return $park;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Park  $park
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Park $park)
     {
-        // Campsite::where('id', $id)->(update[
-
-        // ]);
         //
     }
 
@@ -73,25 +69,24 @@ class CampsitesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Park  $park
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        
-        $campsite = Campsite::findOrFail($id);
-        $campsite->update($request->all());
+        $park = Park::findOrFail($id);
+        $park->update($request->all());
 
-        return response()->json($campsite, 200);
+        return response()->json($park, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Park  $park
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Park $park)
     {
         //
     }

@@ -2,9 +2,12 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 
 class Park extends Model
 {
-    //
+    public function campsites()
+    {
+        return $this->hasMany(Campsite::class);
+    }
+
 }

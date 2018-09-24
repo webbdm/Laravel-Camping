@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 
+// use App\Campsite;  
+// use APP\Park;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +16,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+
+// Route::get('/campsites', 'CampsitesController@index');
+
+// Route::get('/campsites/{campsite}', 'CampsitesController@show');
+
+// Route::post('/parks', 'ParkController@store');
+
+// Route::get('/parks', 'ParkController@index');
