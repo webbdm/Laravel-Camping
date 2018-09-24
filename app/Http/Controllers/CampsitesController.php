@@ -14,9 +14,7 @@ class CampsitesController extends Controller
      */
     public function index()
     {
-        $campsites = Campsite::all();
-
-        return $campsites; 
+        return Campsite::all();
     }
 
     /**

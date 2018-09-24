@@ -14,9 +14,7 @@ class ParksController extends Controller
      */
     public function index()
     {
-        $parks = Park::all();
-
-        return $parks;
+        return Park::all();
     }
 
     /**
