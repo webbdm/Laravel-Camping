@@ -20,3 +20,9 @@ Route::put('/posts/{post}', 'PostsController@update');
 Route::delete('/posts/{post}', 'PostsController@destroy');
 
 Route::get('/jobs', 'JobsController@index');
+
+Route::get('/skillsets', 'SkillsetsController@index');
+Route::get('/skillsets/{skillset}', 'SkillsetsController@show');
+
+Route::get('/resumes', 'ResumesController@index');
+Route::get('/resumes/{resume}', 'ResumesController@show');
