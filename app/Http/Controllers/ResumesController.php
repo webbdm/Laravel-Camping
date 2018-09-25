@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Skillset;
+use App\Resume;
 use Illuminate\Http\Request;
 
-class SkillsetsController extends Controller
+class ResumesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class SkillsetsController extends Controller
      */
     public function index()
     {
-        return Skillset::all();
+        return Resume::all(); 
     }
 
     /**
@@ -41,21 +41,21 @@ class SkillsetsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Skillset  $skillset
+     * @param  \App\Resume  $resume
      * @return \Illuminate\Http\Response
      */
-    public function show(Skillset $skillset)
+    public function show(Resume $resume)
     {
-        return $skillset;
+        return $resume;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Skillset  $skillset
+     * @param  \App\Resume  $resume
      * @return \Illuminate\Http\Response
      */
-    public function edit(Skillset $skillset)
+    public function edit(Resume $resume)
     {
         //
     }
@@ -64,10 +64,10 @@ class SkillsetsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Skillset  $skillset
+     * @param  \App\Resume  $resume
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Skillset $skillset)
+    public function update(Request $request, Resume $resume)
     {
         //
     }
@@ -75,10 +75,10 @@ class SkillsetsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Skillset  $skillset
+     * @param  \App\Resume  $resume
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Skillset $skillset)
+    public function destroy(Resume $resume)
     {
         //
     }
